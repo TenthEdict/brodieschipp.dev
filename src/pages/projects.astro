@@ -12,36 +12,57 @@ import Layout from '../layouts/Layout.astro';
     </div>
 
     <div class="grid md:grid-cols-2 gap-6">
-      <!-- Placeholder project cards -->
       <article class="p-6 rounded-xl bg-[var(--color-bg-card)] border border-[var(--color-border)] space-y-3 hover:border-[var(--color-accent)]/50 transition-colors">
-        <h2 class="text-lg font-semibold">Digitization Tooling</h2>
+        <h2 class="text-lg font-semibold">HathiTrust Package Automation</h2>
         <p class="text-sm text-[var(--color-text-muted)] leading-relaxed">
-          Tools and workflows built for institutional library digitization — processing, 
-          metadata, and quality control.
+          A desktop application that automates the creation of HathiTrust-compliant digital preservation packages from TIFF images. Handles OCR processing via Tesseract, generates compliant YAML metadata, assembles packages with checksums, and validates against HathiTrust requirements. Built for production use at Purdue University Libraries.
         </p>
         <div class="flex gap-2 flex-wrap">
-          <span class="text-xs font-mono px-2 py-1 rounded bg-[var(--color-bg)] text-[var(--color-text-muted)]">archival</span>
+          <span class="text-xs font-mono px-2 py-1 rounded bg-[var(--color-bg)] text-[var(--color-text-muted)]">Python</span>
+          <span class="text-xs font-mono px-2 py-1 rounded bg-[var(--color-bg)] text-[var(--color-text-muted)]">OCR</span>
+          <span class="text-xs font-mono px-2 py-1 rounded bg-[var(--color-bg)] text-[var(--color-text-muted)]">digital preservation</span>
           <span class="text-xs font-mono px-2 py-1 rounded bg-[var(--color-bg)] text-[var(--color-text-muted)]">automation</span>
+        </div>
+      </article>
+
+      <article class="p-6 rounded-xl bg-[var(--color-bg-card)] border border-[var(--color-border)] space-y-3 hover:border-[var(--color-accent)]/50 transition-colors">
+        <h2 class="text-lg font-semibold">FADGI Compliance Trend Analyzer</h2>
+        <p class="text-sm text-[var(--color-text-muted)] leading-relaxed">
+          Parses Golden Thread NXT XML reports to extract FADGI (Federal Agencies Digital Guidelines Initiative) compliance data and tracks it over time in formatted Excel spreadsheets. Supports single-file and batch processing with automated trend analysis and summary dashboards.
+        </p>
+        <div class="flex gap-2 flex-wrap">
+          <span class="text-xs font-mono px-2 py-1 rounded bg-[var(--color-bg)] text-[var(--color-text-muted)]">Python</span>
+          <span class="text-xs font-mono px-2 py-1 rounded bg-[var(--color-bg)] text-[var(--color-text-muted)]">XML parsing</span>
+          <span class="text-xs font-mono px-2 py-1 rounded bg-[var(--color-bg)] text-[var(--color-text-muted)]">quality assurance</span>
+          <span class="text-xs font-mono px-2 py-1 rounded bg-[var(--color-bg)] text-[var(--color-text-muted)]">FADGI</span>
+        </div>
+      </article>
+
+      <article class="p-6 rounded-xl bg-[var(--color-bg-card)] border border-[var(--color-border)] space-y-3 hover:border-[var(--color-accent)]/50 transition-colors">
+        <h2 class="text-lg font-semibold">Digitization Cropping Calculator</h2>
+        <p class="text-sm text-[var(--color-text-muted)] leading-relaxed">
+          A lightweight GUI tool that calculates optimal AutoCrop visual padding using the geometric mean of object dimensions. Supports loose and bound materials with live calculation as you type. Zero dependencies beyond Python 3 — just double-click and go.
+        </p>
+        <div class="flex gap-2 flex-wrap">
+          <span class="text-xs font-mono px-2 py-1 rounded bg-[var(--color-bg)] text-[var(--color-text-muted)]">Python</span>
+          <span class="text-xs font-mono px-2 py-1 rounded bg-[var(--color-bg)] text-[var(--color-text-muted)]">tkinter</span>
+          <span class="text-xs font-mono px-2 py-1 rounded bg-[var(--color-bg)] text-[var(--color-text-muted)]">digitization</span>
+          <span class="text-xs font-mono px-2 py-1 rounded bg-[var(--color-bg)] text-[var(--color-text-muted)]">utility</span>
         </div>
       </article>
 
       <article class="p-6 rounded-xl bg-[var(--color-bg-card)] border border-[var(--color-border)] space-y-3 hover:border-[var(--color-accent)]/50 transition-colors">
         <h2 class="text-lg font-semibold">Chess Team — Multi-Agent AI</h2>
         <p class="text-sm text-[var(--color-text-muted)] leading-relaxed">
-          A chess-themed multi-agent system with specialized AI roles — orchestration, 
-          research, automation, utility, and evaluation.
+          A chess-themed multi-agent system with specialized AI roles — orchestration, deep research, systems automation, utility tasks, and independent evaluation. Each piece runs a different model chosen for the right balance of capability and cost.
         </p>
         <div class="flex gap-2 flex-wrap">
           <span class="text-xs font-mono px-2 py-1 rounded bg-[var(--color-bg)] text-[var(--color-text-muted)]">AI</span>
           <span class="text-xs font-mono px-2 py-1 rounded bg-[var(--color-bg)] text-[var(--color-text-muted)]">systems design</span>
+          <span class="text-xs font-mono px-2 py-1 rounded bg-[var(--color-bg)] text-[var(--color-text-muted)]">multi-agent</span>
         </div>
         <a href="/chess-team" class="text-sm text-[var(--color-accent)] hover:text-[var(--color-accent-hover)]">Read more →</a>
       </article>
-
-      <!-- Add more projects -->
-      <div class="p-6 rounded-xl border border-dashed border-[var(--color-border)] text-center text-[var(--color-text-muted)] md:col-span-2">
-        <p class="text-sm">More projects to be added.</p>
-      </div>
     </div>
   </section>
 </Layout>
