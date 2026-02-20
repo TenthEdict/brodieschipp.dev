@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact">
+  <section class="py-8 space-y-8 max-w-2xl">
+    <h1 class="text-4xl font-bold">Get in Touch</h1>
+    <p class="text-[var(--color-text-muted)] leading-relaxed">
+      Whether it's about research, a project idea, or just an interesting conversation — 
+      I'd like to hear from you.
+    </p>
+
+    <div class="space-y-4">
+      <a href="https://github.com/TenthEdict" class="flex items-center gap-3 p-4 rounded-xl bg-[var(--color-bg-card)] border border-[var(--color-border)] hover:border-[var(--color-accent)]/50 transition-colors" target="_blank" rel="noopener">
+        <span class="text-xl">💻</span>
+        <div>
+          <p class="font-medium">GitHub</p>
+          <p class="text-sm text-[var(--color-text-muted)]">@TenthEdict</p>
+        </div>
+      </a>
+
+      <!-- Add more contact links as needed -->
+      <div class="p-4 rounded-xl border border-dashed border-[var(--color-border)] text-[var(--color-text-muted)] text-sm">
+        More links coming soon — LinkedIn, email, etc.
+      </div>
+    </div>
+  </section>
+</Layout>

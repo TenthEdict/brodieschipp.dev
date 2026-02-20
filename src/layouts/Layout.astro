@@ -1,0 +1,50 @@
+---
+import '../styles/global.css'
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Brodie Schipp — I/O Psychology, Digital Archives, & AI Systems" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <title>{title} | Brodie Schipp</title>
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <nav class="sticky top-0 z-50 bg-[var(--color-bg)]/80 backdrop-blur-md border-b border-[var(--color-border)]">
+      <div class="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="/" class="text-lg font-semibold text-[var(--color-accent)] hover:text-[var(--color-accent-hover)] transition-colors">
+          BS<span class="text-[var(--color-text-muted)]">.</span>dev
+        </a>
+        <div class="flex gap-6 text-sm">
+          <a href="/about" class="text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors">About</a>
+          <a href="/research" class="text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors">Research</a>
+          <a href="/projects" class="text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors">Projects</a>
+          <a href="/chess-team" class="text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors">Chess Team</a>
+          <a href="/contact" class="text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="flex-1 max-w-4xl mx-auto px-6 py-12 w-full">
+      <slot />
+    </main>
+
+    <footer class="border-t border-[var(--color-border)] mt-auto">
+      <div class="max-w-4xl mx-auto px-6 py-6 text-center text-sm text-[var(--color-text-muted)]">
+        <p>© {new Date().getFullYear()} Brodie Schipp. Built with Astro.</p>
+      </div>
+    </footer>
+  </body>
+</html>

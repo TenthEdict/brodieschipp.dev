@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Research">
+  <section class="py-8 space-y-8">
+    <div>
+      <h1 class="text-4xl font-bold mb-4">Research</h1>
+      <p class="text-[var(--color-text-muted)] max-w-2xl">
+        My research lives at the intersection of organizational psychology and the evolving 
+        nature of work. Here's what I've been working on.
+      </p>
+    </div>
+
+    <div class="space-y-6">
+      <!-- Placeholder for thesis / publications -->
+      <article class="p-6 rounded-xl bg-[var(--color-bg-card)] border border-[var(--color-border)] space-y-3">
+        <div class="flex items-center gap-3">
+          <span class="text-xs font-mono px-2 py-1 rounded bg-[var(--color-accent)]/10 text-[var(--color-accent)]">Thesis</span>
+          <span class="text-xs text-[var(--color-text-muted)]">2026</span>
+        </div>
+        <h2 class="text-xl font-semibold">Your Thesis Title Here</h2>
+        <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">
+          A brief abstract or description of your thesis work. Update this once you're ready 
+          to share the details publicly.
+        </p>
+      </article>
+
+      <!-- Add more research items as needed -->
+      <div class="p-6 rounded-xl border border-dashed border-[var(--color-border)] text-center text-[var(--color-text-muted)]">
+        <p class="text-sm">More research coming soon.</p>
+      </div>
+    </div>
+  </section>
+</Layout>

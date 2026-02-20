@@ -1,0 +1,134 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pieces = [
+  {
+    symbol: '♔',
+    name: 'King',
+    subtitle: 'The Human in the Loop',
+    role: 'Final Decision-Maker',
+    model: 'Brodie Schipp',
+    color: 'amber',
+    description: 'Every system needs a sovereign. The King doesn\'t move fast, but every piece on the board moves in service of the King\'s position. In this architecture, that\'s me — the human. I set direction, make final calls, and hold veto power. AI advises; I decide.',
+    quote: '"The King is the game. Protect it, and everything else is tactics."',
+    isHuman: true,
+  },
+  {
+    symbol: '♜',
+    name: 'Rook',
+    subtitle: 'Strategist & Orchestrator',
+    role: 'Primary Agent',
+    model: 'Claude Opus',
+    color: 'blue',
+    description: 'The rook moves in straight, decisive lines — no wasted motion. Rook is the central orchestrator: manages all other agents, handles daily operations, and serves as my primary thinking partner. Strategic planning, task delegation, and keeping the whole board in view.',
+    quote: '"I don\'t just execute tasks. I think about whether the task is the right move."',
+  },
+  {
+    symbol: '♝',
+    name: 'Bishop',
+    subtitle: 'Deep Researcher',
+    role: 'Research Agent',
+    model: 'Claude Sonnet',
+    color: 'purple',
+    description: 'Bishops cover diagonals — angles others miss. Bishop handles deep research, literature reviews, and complex analysis. When a question needs more than a quick search, Bishop goes deep: synthesizing sources, finding connections, and producing structured findings.',
+    quote: '"The diagonal sees what the rank and file cannot."',
+  },
+  {
+    symbol: '♞',
+    name: 'Knight',
+    subtitle: 'Systems & Automation',
+    role: 'DevOps Agent',
+    model: 'Claude Sonnet',
+    color: 'green',
+    description: 'The knight jumps — it doesn\'t follow the rules of straight lines. Knight handles systems work, automation, health checks, and the kind of lateral problem-solving that keeps infrastructure running. Unconventional paths to practical solutions.',
+    quote: '"L-shaped thinking for problems that don\'t move in straight lines."',
+  },
+  {
+    symbol: '♟',
+    name: 'Pawn',
+    subtitle: 'Utility & Quick Tasks',
+    role: 'Utility Agent',
+    model: 'Claude Haiku',
+    color: 'zinc',
+    description: 'Don\'t underestimate the pawn — it\'s the soul of chess. Pawn handles rapid-fire utility tasks: formatting, quick lookups, file operations, lightweight processing. Fast, efficient, and always ready. Most tasks don\'t need a queen when a pawn will do.',
+    quote: '"Efficiency isn\'t glamorous, but it wins games."',
+  },
+  {
+    symbol: '♛',
+    name: 'Queen',
+    subtitle: 'Evaluator & Auditor',
+    role: 'Quality Agent',
+    model: 'Claude Sonnet',
+    color: 'rose',
+    description: 'The most powerful piece on the board — but power without judgment is dangerous. Queen evaluates Rook\'s decisions, audits reasoning on high-stakes calls, and provides an independent perspective. Not a gatekeeper, but a mirror. Triggered periodically or when the stakes demand a second opinion.',
+    quote: '"Power is the ability to see clearly, not just to act broadly."',
+  },
+];
+
+const colorMap: Record<string, { border: string; bg: string; text: string }> = {
+  amber:  { border: 'border-amber-500/30', bg: 'bg-amber-500/10', text: 'text-amber-400' },
+  blue:   { border: 'border-blue-500/30', bg: 'bg-blue-500/10', text: 'text-blue-400' },
+  purple: { border: 'border-purple-500/30', bg: 'bg-purple-500/10', text: 'text-purple-400' },
+  green:  { border: 'border-green-500/30', bg: 'bg-green-500/10', text: 'text-green-400' },
+  zinc:   { border: 'border-zinc-500/30', bg: 'bg-zinc-500/10', text: 'text-zinc-400' },
+  rose:   { border: 'border-rose-500/30', bg: 'bg-rose-500/10', text: 'text-rose-400' },
+};
+---
+
+<Layout title="Chess Team" description="A chess-themed multi-agent AI system — how one person orchestrates five specialized AI agents.">
+  <section class="py-8 space-y-8">
+    <div class="space-y-4">
+      <h1 class="text-4xl font-bold">The Chess Team</h1>
+      <p class="text-[var(--color-text-muted)] max-w-2xl leading-relaxed">
+        I built a multi-agent AI system modeled after chess pieces. Each agent has a 
+        specialized role, a distinct personality, and a specific model powering it — chosen 
+        for the right balance of capability and efficiency.
+      </p>
+      <p class="text-[var(--color-text-muted)] max-w-2xl leading-relaxed">
+        This isn't about having AI do everything. It's about <strong class="text-[var(--color-text)]">designing 
+        a system</strong> where the right agent handles the right task, with a human always 
+        holding the final move. Think of it as organizational design — applied to AI.
+      </p>
+    </div>
+
+    <div class="space-y-6">
+      {pieces.map((piece) => {
+        const c = colorMap[piece.color];
+        return (
+          <article class={`p-6 rounded-xl bg-[var(--color-bg-card)] border ${c.border} space-y-4`}>
+            <div class="flex items-start justify-between">
+              <div class="flex items-center gap-4">
+                <span class={`text-4xl ${c.text}`}>{piece.symbol}</span>
+                <div>
+                  <h2 class="text-xl font-semibold">{piece.name}</h2>
+                  <p class="text-sm text-[var(--color-text-muted)]">{piece.subtitle}</p>
+                </div>
+              </div>
+              <div class="flex gap-2">
+                <span class={`text-xs font-mono px-2 py-1 rounded ${c.bg} ${c.text}`}>
+                  {piece.role}
+                </span>
+                <span class="text-xs font-mono px-2 py-1 rounded bg-[var(--color-bg)] text-[var(--color-text-muted)]">
+                  {piece.model}
+                </span>
+              </div>
+            </div>
+            <p class="text-[var(--color-text-muted)] leading-relaxed">{piece.description}</p>
+            <p class={`text-sm italic ${c.text} font-mono`}>{piece.quote}</p>
+          </article>
+        );
+      })}
+    </div>
+
+    <div class="p-6 rounded-xl bg-[var(--color-bg-card)] border border-[var(--color-border)] space-y-3 mt-8">
+      <h2 class="text-xl font-semibold">Why Chess?</h2>
+      <p class="text-[var(--color-text-muted)] leading-relaxed">
+        Chess is a game of specialization, coordination, and knowing which piece to move when. 
+        A rook and a bishop do very different things — but together they control the board. 
+        AI agents work the same way. A heavyweight model for strategy, a lightweight one for 
+        utility, and a human at the center making the moves that matter. The metaphor isn't 
+        just cute — it's how I think about system design.
+      </p>
+    </div>
+  </section>
+</Layout>

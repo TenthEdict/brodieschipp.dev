@@ -1,0 +1,47 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Projects">
+  <section class="py-8 space-y-8">
+    <div>
+      <h1 class="text-4xl font-bold mb-4">Projects</h1>
+      <p class="text-[var(--color-text-muted)] max-w-2xl">
+        Tools, systems, and experiments — mostly born from the question "what if I could automate this?"
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <!-- Placeholder project cards -->
+      <article class="p-6 rounded-xl bg-[var(--color-bg-card)] border border-[var(--color-border)] space-y-3 hover:border-[var(--color-accent)]/50 transition-colors">
+        <h2 class="text-lg font-semibold">Digitization Tooling</h2>
+        <p class="text-sm text-[var(--color-text-muted)] leading-relaxed">
+          Tools and workflows built for institutional library digitization — processing, 
+          metadata, and quality control.
+        </p>
+        <div class="flex gap-2 flex-wrap">
+          <span class="text-xs font-mono px-2 py-1 rounded bg-[var(--color-bg)] text-[var(--color-text-muted)]">archival</span>
+          <span class="text-xs font-mono px-2 py-1 rounded bg-[var(--color-bg)] text-[var(--color-text-muted)]">automation</span>
+        </div>
+      </article>
+
+      <article class="p-6 rounded-xl bg-[var(--color-bg-card)] border border-[var(--color-border)] space-y-3 hover:border-[var(--color-accent)]/50 transition-colors">
+        <h2 class="text-lg font-semibold">Chess Team — Multi-Agent AI</h2>
+        <p class="text-sm text-[var(--color-text-muted)] leading-relaxed">
+          A chess-themed multi-agent system with specialized AI roles — orchestration, 
+          research, automation, utility, and evaluation.
+        </p>
+        <div class="flex gap-2 flex-wrap">
+          <span class="text-xs font-mono px-2 py-1 rounded bg-[var(--color-bg)] text-[var(--color-text-muted)]">AI</span>
+          <span class="text-xs font-mono px-2 py-1 rounded bg-[var(--color-bg)] text-[var(--color-text-muted)]">systems design</span>
+        </div>
+        <a href="/chess-team" class="text-sm text-[var(--color-accent)] hover:text-[var(--color-accent-hover)]">Read more →</a>
+      </article>
+
+      <!-- Add more projects -->
+      <div class="p-6 rounded-xl border border-dashed border-[var(--color-border)] text-center text-[var(--color-text-muted)] md:col-span-2">
+        <p class="text-sm">More projects to be added.</p>
+      </div>
+    </div>
+  </section>
+</Layout>
